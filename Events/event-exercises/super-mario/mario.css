@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  
+  }
+  .wraper {
+    height: 90%;
+    position: relative;
+    background: #fff url("img/bg.jpg");
+    background-repeat: repeat-x;
+    background-size: contain;
+  }
+  img {
+    width: 150px;
+    position: absolute;
+    left: 47%;
+    top: 65%;
+  }

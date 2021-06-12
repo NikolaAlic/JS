@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prevent Default Demo</title>
+</head>
+<body>
+<form action="/examples/html/action.php" method="post" id="users">
+    <label>First Name:</label>
+    <input type="text" name="first-name" id="firstName">
+    <input type="submit" value="Submit" id="submitBtn">
+</form>
+
+<script>
+    var btn = document.getElementById("submitBtn");
+    
+    btn.addEventListener("click", function(event) {
+        var name = document.getElementById("firstName").value;
+        alert("Sorry, " + name + ". The preventDefault() won't let you submit this form!");
+        event.preventDefault(); // Prevent form submission
+    });
+</script>
+</body>
+</html>

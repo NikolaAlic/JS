@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Event Capturing Demo</title>
+    <style type="text/css">
+        div,
+        p,
+        a {
+            padding: 15px 30px;
+            display: block;
+            border: 2px solid #000;
+        }
+        div {
+            background-color: azure;
+        }
+
+        p {
+            background-color: aquamarine;
+        }
+
+        a {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p class="hint">
+            <a href="#" onclick="event.preventDefault()">Click me</a>
+        </p>
+    </div>
+    <script>
+        function showTagName() {
+            alert("Capturing: " + this.tagName);
+        }
+
+        var elems = document.querySelectorAll("div, p, a");
+        for (let elem of elems) {
+            elem.addEventListener("click", showTagName, true);
+        }
+    </script>
+</body>
+</html>

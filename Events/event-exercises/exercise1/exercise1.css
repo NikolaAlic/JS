@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    padding-top: 30px;
+}
+
+button {
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: tomato;
+}
+
+.bg-color {
+    background-color: rgb(50, 50, 63);
+}
+
+#automatic {
+    margin-top: 30px;
+    background-color: rgb(196, 196, 16);
+}

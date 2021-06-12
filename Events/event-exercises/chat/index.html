@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vezba</title>
+    <style>
+        .bckground {
+            background-color: lightblue;
+        }
+        
+        #chat {
+            width: 50%;
+            margin: auto;
+            background-color: black;
+        }
+        
+        #room {
+            height: 500px;
+            background-color: lightcoral;
+			overflow-y: auto;
+        }
+        
+        #room>p {
+            padding: 2px 2px 0 6px;
+			margin:0;
+            color: chartreuse;
+            border: 1px solid white;
+        }
+        
+        form {
+            background-color: limegreen;
+            width: 100%;
+            display: flex;
+        }
+        
+        label {
+            width: 0;
+        }
+        
+        #txt {
+            width: 70%;
+            float: right;
+        }
+        
+        #send {
+            width: 29%;
+            background-color: maroon;
+            color: mintcream;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id='toggle' onclick="changeColor()">Toggle background</button>
+    <button id="disable" onclick="disableToggle()">Turn off</button>
+    <div id="chat">
+        <div id="room"></div>
+        <form name="myform" action="" method="GET">
+            <label for="txt"></label>
+            <input type="text" id="txt" name="inputbox" placeholder="Unesite poruku" onkeyup="stoppedTyping(value)">
+            <input id="send" type="button" name="sendButton" disabled value="Send" onclick="testResults(this.form)">
+        </form>
+    </div>
+
+    <script>
+        // Toggle dugme - funkcija za promenu boje
+        function changeColor() {
+            var element = document.body;
+            element.classList.toggle('bckground');
+        }
+
+        //  Turn-dugme - funkcija da uključi i isključi Toggle dugme
+        function disableToggle() {
+            // document.getElementById('toggle').disabled = true;
+            var x = document.getElementById('toggle');
+            var y = document.getElementById('disable')
+            if (x.disabled == false) {
+                x.disabled = true;
+                y.innerHTML = 'Turn On!';
+            } else {
+                x.disabled = false;
+                y.innerHTML = 'Turn Off!';
+            }
+        }
+
+        // klik na send da posalje input gore 
+        // #send-dugme; #txt-input; #room-soba
+        /*
+        function testResults(form) {
+            var test = form.inputbox.value;
+            console.log(test);
+            //   document.getElementById("room").innerHTML = test;
+            document.getElementById("room").innerText = test;
+        }
+        */
+        function testResults(form) {
+            var node = document.createElement("p");
+            var test = document.createTextNode(form.inputbox.value);
+			node.appendChild(test);
+			console.log(node);
+            document.getElementById("room").appendChild(node);
+			form.inputbox.value = "";
+			form.sendButton.disabled = true;
+        }
+		
+		function stoppedTyping(value) {
+			var button = document.getElementById("send");
+			if(value && value.trim()) {
+				button.disabled = false;
+			} else {
+				button.disabled = true;
+			}
+			
+		}
+    </script>
+    <!-- <script src="main.js"></script> -->
+</body>
+
+</html>
