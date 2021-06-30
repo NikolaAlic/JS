@@ -10,7 +10,8 @@ $(document).ready(function () {
 function search(inputValue) {
     $.ajax({
         url: `${url}${inputValue}`,
-        method: 'GET'
+        method: 'GET',
+        
     }).done(function (response) {
         cardHolder.html("");
         if (response.items.length == 0) {
