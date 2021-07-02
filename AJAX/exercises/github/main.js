@@ -23,6 +23,7 @@ function search(inputValue) {
             var card = $(`<div class='col-4'><div class= 'card'><img src='${item.avatar_url}'><div class='card-body'>
             <h5 class='card-title'> ${item.login}</h5>
             <a href='${item.html_url}' target='_blank' class='btn btn-primary'>Go to profile</a>
+            <label href='' onclick="goToRepositories('${item.repos_url}')" class='btn btn-primary'>Read repositories</label>
             </div>
             </div>
             </div>`);
@@ -33,6 +34,11 @@ function search(inputValue) {
         errorElement.text("Network error!");
         errorElement.toggle();
     })
+}
+
+function goToRepositories(repoUrl) {
+    localStorage.setItem("user_repo", repoUrl);
+    location.assign('repositories.html');
 }
 
 function searchHandler(event) {
