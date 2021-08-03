@@ -1,0 +1,44 @@
+header {
+    background-color: $dark;
+    padding: 5px 0;
+    a, a:hover {
+        color: $light;
+    }
+    form {
+        position: relative;
+        .search-result {
+            display: none;
+            position: absolute;
+            top: 38px;
+            right: 8px;
+            padding: 10px;
+            width: 199px;
+            border: 1px solid #e5e5e5;
+            background-color: #fff;
+            z-index: 1;
+            border-radius: 3px;
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                li {
+                    border-bottom: 1px solid #e5e5e5;
+                    padding-bottom: 5px;
+                    &:last-child {
+                        border: none;
+                    }
+                }
+                a {
+                    color: $dark;
+                }
+                a:hover {
+                    color: #007bff;
+                }
+            }
+        }
+    }
+    .form-control:focus {
+        border-color: $dark;
+    }
+
+}

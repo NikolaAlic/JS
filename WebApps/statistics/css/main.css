@@ -1,0 +1,194 @@
+  
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    background: url("../img/back.png") no-repeat right;
+    background-size: cover;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.statistics {
+    width: 45%;
+    margin: auto;
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+}
+
+.statistics div p {
+  display: inline-block;
+}
+
+.statistics>p {
+    font-size: 22px;
+}
+
+.passed,.failed {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 10px 10px;
+    text-align: left;
+    color:black;
+    margin-bottom:10px;
+}
+
+.passed p:first-child, .failed p:first-child {
+  width: 82%;
+}
+
+.passed p, .failed p{
+  margin: 0;
+}
+
+.passed {
+    background: #28b9b5;
+}
+
+.failed {
+    background: #ff5049;
+}
+
+.num-passed, .num-failed, .percentage {
+    color: white;
+}
+
+.percentage {
+  background-color: #f67470;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.form {
+    padding: 15px;
+    background: #f7f7f7;
+}
+
+form {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+select {
+  background-color: #dddddd;
+  outline: none;
+}
+
+select, #add {
+    width: 15%;
+    display: inline-block;
+}
+
+#name {
+    width: 45%;
+    display: inline-block;
+}
+
+select, #name {
+    border: 1px solid #e7e7e7;
+    padding: 10px;
+    border-radius: 5px;
+    color: #75758a;
+    font-size: 20px;
+}
+
+#add {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    vertical-align: middle;
+    color: #28b9b5;
+    outline: none;
+    cursor: pointer;
+}
+
+#add:hover {
+    color: #75758a;
+}
+
+.exam-results {
+    overflow: hidden;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.exam-results h3 {
+    font-weight: 100;
+}
+.passed-results, .failed-results {
+    width:50%;
+    float:left;
+    padding-right: 50px;
+}
+
+.passed-results h3, .exam-results li {
+    color:#75758a;
+}
+
+.failed-results h3 {
+    color:#ff5049;
+}
+.exam-results ul li:first-child {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+.exam-results li {
+    padding: 15px;
+    border-bottom: 1px solid #e7e7e7;
+
+}
+
+ul li .name-and-subject {
+  float:left;
+  margin: 0;
+}
+
+.grade-span {
+    padding-right: 10px;
+}
+
+.delete-span {
+    cursor: pointer;
+}
+
+.delete-span:hover {
+    color: #75758a;
+}
+
+.passed-list li span {
+  color: #28b9b5;
+}
+
+.failed-list li span {
+  color: #ff5049;
+}
+
+ul li .grade-and-delete {
+  float: right;
+  margin: 0;
+}
+
+li{
+  overflow: hidden;
+}

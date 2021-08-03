@@ -1,0 +1,28 @@
+
+main {
+    .title {
+        text-align: center;
+        padding: 15px 0;
+    }
+    .card {
+        margin: 0 auto;
+        margin-bottom: 15px;
+        a {
+            font-weight: bold;
+        }
+    }
+    .poster {
+        width: 100%;
+    }
+    .show-info {
+        padding-top: 15px;
+    }
+    .details {
+        h2 {
+            padding-top: 15px;
+        }
+    }
+    .alert-dark {
+        display: none;
+    }
+}
