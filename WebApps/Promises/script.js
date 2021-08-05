@@ -3,24 +3,49 @@ $(document).ready(function() {
     var catUrl = 'https://thatcopy.pw/catapi/rest/';
     var body = $('body');
 
-    var catPromise = fetch(catUrl).then(function(response) {
-        console.log(response);
+    var promiseA = new Promise((resolve, reject) => {
+        let request = new XMLHttpRequest();
+        request.open('GET', dogUrl);
+        request.onload = ()=> {
+            if(request.status == 200) {
+                resolve(request.response);
+            } else {
+                reject("File not found");
+            }
+        }
+
+        request.send();
+    });
+
+    // promiseA.then(result=> {
+    //     console.log(result);
+    //     return result;
+    // }).then(result=> {
+    //     console.log('Result A');
+    //     console.log(result);
+    // })
+
+    // Promise.resolve(promiseA).then(result=> {
+    //     console.log(result);
+    // });
+
+    var catPromise = fetch(catUrl).then(response=> {
         return response.json();
     });
 
-    var dogPromise = fetch(dogUrl).then(function(response) {
+    var dogPromise = fetch(dogUrl).then(response=> {
         return response.json();
-    });
-    Promise.all([catPromise, dogPromise]).then(function(response) {
-        console.log(response);
-        setTimeout(() => {
-            $('.header').append($('<h1>Cats and dogs</h1>'));
-            
-            var catResponse = response[0];
-            body.append(`<img src='${catResponse.url}'/>`);
-
-            var dogResponse = response[1];
-            body.append(`<img src='${dogResponse.message}'/>`);
-        }, 1000);
     })
+
+    Promise.all([catPromise, dogPromise]).then(response => {
+        $('.header').append($('<h1>Cats and dogs</h1>'));
+        let catResponse = response[0];
+        let dogResponse = response[1];
+        body.append(`<img src='${catResponse.url}'/>`);
+        body.append(`<img src='${dogResponse.message}'/>`);
+    });
+    
+
+
+  
 })
