@@ -27,7 +27,7 @@ class App extends React.Component {
     fetch('https://randomuser.me/api/?results=15').then(response=> {
       return response.json();
     }).then(response=> {
-      let userData = response.results.map(user=> new User(`${user.name.firs} ${user.name.last}`, user.email, user.dob, user.picture));
+      let userData = response.results.map(user=> new User(`${user.name.first} ${user.name.last}`, user.email, user.dob, user.picture));
       this.setState({data: userData});
     });
   }
