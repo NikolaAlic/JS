@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { LifeCycleB } from './LifeCycleB.js';
 
 export class LifeCycleA extends Component {
+
     constructor(props) {
         super(props);
         console.log("A constructor");
@@ -15,27 +16,29 @@ export class LifeCycleA extends Component {
     //     return null;
     // }
 
-    changeName = ()=> {
-        this.setState({name:"Nikola Alic"});
+    changeName = () => {
+        this.setState({ name: "Nikola Alic" })
     }
 
     render() {
         console.log("A render");
         let component = <LifeCycleB />
-        if(this.state.name !="Nikola") {
-            component = <h1>{this.state.name}</h1>;
+        if (this.state.name != "Nikola") {
+            component = null;
         }
 
         return (<div>
+            <input value={this.state.name} onChange={this.changeInput} />
             <button onClick={this.changeName}>Change name</button>
-            <input type="text" value={this.state.name} onChange={this.changeInput}/>
             <h1>Component A</h1>
             {component}
         </div>)
     }
 
     changeInput = (event) => {
-        this.setState({name:event.target.value});
+        this.setState({
+            name: event.target.value
+        })
     }
 
     componentDidMount() {
@@ -43,14 +46,15 @@ export class LifeCycleA extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
+        console.log("A shouldComponentUpdate");
         console.log(nextState);
-        console.log('A shouldComponentUpdate');
         return true;
     }
 
-    componentDidUpdate(props, state) {
-        console.log(state);
-        console.log(this.state);
-        console.log('A componentDidUpdate')
+    componentDidUpdate(prevProps, prevState) {
+        console.log("A componentDidUpdate");
+        console.log(`Current: ${this.state.name}; Previous: ${prevState.name}`)
+
     }
+
 }

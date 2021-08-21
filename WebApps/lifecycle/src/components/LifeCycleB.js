@@ -6,27 +6,27 @@ export class LifeCycleB extends Component {
         console.log("B constructor");
     }
 
-    render() {
-        console.log("B render");
-        return <h1>Component B</h1>;
-    }
-
     // static getDerivedStateFromProps(props, state) {
     //     console.log("B getDerivedStateFromProps");
     //     return null;
     // }
+
+    render() {
+        console.log("B render");
+        return (<h2>Component B</h2>)
+    }
 
     componentDidMount() {
         console.log("B componentDidMount");
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log('B shouldComponentUpdate');
+        console.log("B shouldComponentUpdate");
         return true;
     }
 
-    componentDidUpdate(props, state) {
-        console.log('B componentDidUpdate')
+    componentDidUpdate(prevProps, prevState) {
+        console.log("B componentDidUpdate");
     }
 
     componentWillUnmount() {
