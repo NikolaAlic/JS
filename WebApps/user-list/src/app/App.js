@@ -6,9 +6,8 @@ import Footer from "./partials/Footer"
 import { User } from '../entities/user';
 import React from 'react';
 function App() {
-  const [data, setData] = useState({ data: [] });
-  const [dataCopy, setCopy]=useState({dataCopy:[]})
-  const [search, setSearchString] = useState({searchString:""})
+  const [data, setData] = useState();
+  const [dataCopy, setCopy]=useState()
   const fetchData = () =>
     fetch('https://randomuser.me/api/?results=15').then(response => {
       return response.json();
@@ -34,8 +33,6 @@ function App() {
     } else {
       filtered = dataCopy;
     }
-
-    setSearchString(event.target.value.toLowerCase());
     setData(filtered);
   }
 
