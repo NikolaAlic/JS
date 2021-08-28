@@ -1,5 +1,5 @@
-import React from "react"
-const AboutContent = (props)=> {
+import React from 'react';
+const AboutContent = (props) => {
     return (
         <div className="container main-content">
             <div className="row">
@@ -30,4 +30,4 @@ const AboutContent = (props)=> {
     )
 }
 
-export default AboutContent
+export default AboutContent;

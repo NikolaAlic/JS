@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
+import Footer from './partials/Footer'
+import Header from './partials/Header'
 
 const NotFound = () => {
-    return (<div><h1>ERROR 404</h1>
-    <p><Link to="/home">Return to Home page</Link></p>
-    </div>)
+    return (
+        <Fragment>
+            <Header title="React Users" showNav={false} />
+            <div>
+                <h1>Page not found</h1>
+                <Link to="/home">Return to home</Link>
+            </div>
+            <Footer />
+        </Fragment>
+    )
 }
 
 export default NotFound;

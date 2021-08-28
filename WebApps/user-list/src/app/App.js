@@ -1,10 +1,11 @@
-import React from "react";
+import './App.css';
+import Home from './Home';
+import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
-import About from "./About";
-import Home from "./Home";
-import NotFound from "./NotFound";
-const App = () => {
+import About from './About';
+import NotFound from './NotFound';
 
+function App() {
   return (
     <Router>
       <Switch>
